@@ -1,18 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <script type="module" src="main.js"></script>
 </head>
+
 <body>
 
-    <div id="productContainer">
-        
+    <div id="container">
+        <header id="header">
+            <h1>Imaginary JavaScript Shop</h1>
+            <form action="" id="searchbarForm">
+                <input type="text" name="searchbar" id="searchbar" placeholder="Not in use, just for appearance">
+                <button id="searchbarBtn">🔍</button>
+            </form>
+        </header>
+        <div id="productContainer"></div>
     </div>
 
-    
 </body>
+
 </html>
