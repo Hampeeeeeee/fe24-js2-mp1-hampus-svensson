@@ -58,7 +58,7 @@ export class Product {
         addToCartBtn.innerText = "Add to Cart";
         addToCartBtn.addEventListener('click', () => {
             this.updatePurse();
-            stock.innerText = `Stock: ${this.stock}`;
+            stock.innerHTML = `<b>Stock: ${this.stock}</b>`;
         });
         productCard.append(title, img, stock, discountedPrice, addToCartBtn);
     
