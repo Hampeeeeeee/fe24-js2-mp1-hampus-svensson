@@ -4,7 +4,7 @@ export class Product {
     stock;
     #price;
     #discountPercentage;
-    #category;
+    category;
     #rating;
 
     constructor(title, imageUrl, stock, price, discountPercentage, category, rating) {
@@ -13,13 +13,13 @@ export class Product {
         this.stock = stock;
         this.#price = price;
         this.#discountPercentage = discountPercentage;
-        this.#category = category;
+        this.category = category;
         this.#rating = rating;
     }
 
     displayInfo() {
         console.log(`Name: ${this.#title} - ${this.#imageUrl} - Amount: ${this.stock} - Price: $${this.#price} - 
-                    Discount: ${this.#discountPercentage}% - Category: ${this.#category} - Rating: ${this.#rating}`);
+                    Discount: ${this.#discountPercentage}% - Category: ${this.category} - Rating: ${this.#rating}`);
     }
 
     discountedPrice() {
@@ -48,11 +48,11 @@ export class Product {
         
         // Skapa ett lagersaldo
         const stock = document.createElement('p');
-        stock.innerText = `Stock: ${this.stock}`;
+        stock.innerHTML = `<b>Stock: ${this.stock}</b>`;
         
         // Skapa ett pris för produkten
         const discountedPrice = document.createElement('p');
-        discountedPrice.innerText = `Price: $${this.discountedPrice()}`;
+        discountedPrice.innerHTML = `<i>Price: $${this.discountedPrice()}</i>`;
         
         const addToCartBtn = document.createElement('button');
         addToCartBtn.innerText = "Add to Cart";

@@ -14,9 +14,25 @@
 </head>
 
 <body>
-
     <div id="container">
         <header id="header">
+                <div id="selectFormOne">
+                    <label id="category">Filter by category:</label>
+                    <select name="categoryFilter" id="categoryFilter">
+                        <option disabled='disabled' selected>Select category</option> 
+                        <option value="All">All</option>
+                        <option value="beauty">Beauty</option>
+                        <option value="fragrances">Fragrances</option>
+                        <option value="furniture">Furniture</option>
+                        <option value="groceries">Groceries</option>
+                    </select>
+                    <label id="price">Filter by price:</label>
+                    <select name="priceFilter" id="priceFilter">
+                        <option disabled='disabled' selected>Select prize</option> 
+                        <option> &lt; $50</option>
+                        <option> &gt; $50</option>
+                    </select>
+                </div>
             <h1>Imaginary JavaScript Shop</h1>
             <form action="" id="searchbarForm">
                 <input type="text" name="searchbar" id="searchbar" placeholder="Not in use, just for appearance">
