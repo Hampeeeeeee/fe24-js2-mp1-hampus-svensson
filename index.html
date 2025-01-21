@@ -16,7 +16,10 @@
 <body>
     <div id="container">
         <header id="header">
+            <div id="selectFormDiv">
+
                 <div id="selectFormOne">
+
                     <label id="category">Filter by category:</label>
                     <select name="categoryFilter" id="categoryFilter">
                         <option disabled='disabled' selected>Select category</option> 
@@ -26,21 +29,43 @@
                         <option value="furniture">Furniture</option>
                         <option value="groceries">Groceries</option>
                     </select>
+
                     <label id="price">Filter by price:</label>
                     <select name="priceFilter" id="priceFilter">
-                        <option disabled='disabled' selected>Select prize</option> 
+                        <option disabled='disabled' selected>Select price</option> 
                         <option> &lt; $50</option>
                         <option> &gt; $50</option>
                     </select>
                 </div>
+
+                <div id="selectFormTwo">
+                    <label id="priceHighLow">Sort by price:</label>
+                    <select name="priceHighLowSort" id="priceHighLowSort">
+                        <option disabled='disabled' selected>Sort price</option>
+                        <option value="lowToHighPrice">Low > High</option>
+                        <option value="highToLowPrice">High > Low</option>
+                    </select>
+
+                    <label id="ratingHighLow">Sort by rating:</label>
+                    <select name="ratingHighLowSort" id="ratingHighLowSort">
+                        <option disabled="disabled" selected>Sort rating</option>
+                        <option value="lowToHighRating">Low > High</option>
+                        <option value="highToLowRating">High > Low</option>
+                    </select>
+                </div>
+
+            </div>
+
             <h1>Imaginary JavaScript Shop</h1>
+
             <form action="" id="searchbarForm">
                 <input type="text" name="searchbar" id="searchbar" placeholder="Not in use, just for appearance">
                 <button id="searchbarBtn">🔍</button>
             </form>
+
         </header>
-        <div id="productContainer"></div>
     </div>
+        <div id="productContainer"></div>
 
 </body>
 

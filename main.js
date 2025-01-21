@@ -1,49 +1,74 @@
 import { getProducts } from "./modules/API.js";
-import { filterByCategory } from "./modules/Filter.js";
-import { filterByPrice } from "./modules/Filter.js";
+import { filterByCategory, filterByPrice, sortByPrice, sortByRating } from "./modules/Filter.js";
 
 getProducts().then(products => {
     console.log(products)
-    initializeDropdown(products);
-    renderProducts(products);
+    filterDropdown(products);
+    displayProducts(products);
 });
 
 async function fetchAndLogProducts() {
     const products = await getProducts();
-    renderProducts(products);
+    displayProducts(products);
 }
 
-function initializeDropdown(products) {
-    const categoryDropdown = document.getElementById('categoryFilter')
-    const priceDropdown = document.getElementById('priceFilter');
+function filterDropdown(products) {
+    const filterCategoryDropdown = document.getElementById('categoryFilter')
+    const filterPriceDowndown = document.getElementById('priceFilter');
+    const sortPriceDropdown = document.getElementById('priceHighLowSort');
+    const sortRatingDropdown = document.getElementById('ratingHighLowSort');
 
-    categoryDropdown.addEventListener('change', () => {
-        const selectedCategory = categoryDropdown.value;
-        const selectedPrice = priceDropdown.value;
+    filterCategoryDropdown.addEventListener('change', () => {
+        const selectedCategory = filterCategoryDropdown.value;
+        const selectedFilterPrice = filterPriceDowndown.value;
 
         console.log('Selected category:', selectedCategory);
-        console.log('Selected price:', selectedPrice);
+        console.log('Selected price:', selectedFilterPrice);
 
         const filteredProducts = filterByCategory(products, selectedCategory);
         console.log('Filtered Products:', filteredProducts);
-        renderProducts(filteredProducts);
+        displayProducts(filteredProducts);
     });
 
-    priceDropdown.addEventListener('change', () => {
-        const selectedCategory = categoryDropdown.value;
-        const selectedPrice = priceDropdown.value;
+    filterPriceDowndown.addEventListener('change', () => {
+        const selectedCategory = filterCategoryDropdown.value;
+        const selectedFilterPrice = filterPriceDowndown.value;
 
         console.log('Selected Category:', selectedCategory);
-        console.log('Selected Price:', selectedPrice);
+        console.log('Selected Price:', selectedFilterPrice);
 
         const filteredByCategory = filterByCategory(products, selectedCategory);
-        const filteredByPrice = filterByPrice(filteredByCategory, selectedPrice);
+        const filteredByPrice = filterByPrice(filteredByCategory, selectedFilterPrice);
         console.log('Filtered Products:', filteredByPrice);
-        renderProducts(filteredByPrice);
+        displayProducts(filteredByPrice);
     });
+
+    sortPriceDropdown.addEventListener('change', () =>{
+        const sortedPrice = sortPriceDropdown.value;
+
+        console.log('Sorted price:', sortedPrice);
+
+        const sortedByPrice = sortByPrice(products, sortedPrice);
+        console.log('Sorted by price:', sortedByPrice);
+
+        displayProducts(sortedByPrice);
+    }); 
+
+    sortRatingDropdown.addEventListener('change', () =>{
+        const sortedRating = sortRatingDropdown.value;
+
+        console.log('Sorted rating:', sortedRating);
+
+        const sortedByRating = sortByRating(products, sortedRating);
+        console.log('Sorted by rating:', sortedByRating);
+
+        displayProducts(sortedByRating);
+    }); 
+
+
 }
 
-function renderProducts(products) {
+function displayProducts(products) {
     const container = document.getElementById('productContainer');
     container.innerHTML = '';
 

@@ -5,18 +5,15 @@
     padding: 0;
 }
 
+#container {
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 auto;
+}
+
 h1 {
     font-family: "Playfair Display", 'Serif';
     text-align: center;
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
 #header {
@@ -29,10 +26,14 @@ h1 {
     margin-bottom: 20px;
 }
 
+#selectFormDiv {
+    display: flex;
+    justify-content: space-between;
+}
+
 #searchbarForm {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     margin: 20px auto;
     width: 100%;
     max-width: 600px;
@@ -78,7 +79,7 @@ h1 {
 #selectFormOne {
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
     width: 200px;
     height: 0px;
@@ -119,7 +120,49 @@ h1 {
     background-color: #fff;
 }
 
+#selectFormTwo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    height: 0px;
+    margin-left: 15rem;
+}
 
+#priceHighLow, #ratingHighLow {
+    font-family: "Playfair Display", serif;
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #333;  /* Färgen på etiketter */
+}
+
+#priceHighLowSort, #ratingHighLowSort {
+    font-family: "Playfair Display", serif;
+    font-size: 16px;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 100%; /* Gör dropdowns lika breda som formuläret */
+    background-color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    color: #333;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Skugga för att skapa djup */
+}
+
+#priceHighLowSort:hover, #ratingHighLowSort:hover, #priceHighLowSort:focus, #ratingHighLowSort:focus {
+    border-color: #005bb5;
+    outline: none; /* Tar bort blå fokuslinje på fält */
+    box-shadow: 0 0 5px rgba(0, 91, 181, 0.6); /* Lägger till fokus-effekt */
+}
+
+#priceHighLowSort option, #ratingHighLowSort option {
+    font-family: "Playfair Display", serif;
+    font-size: 16px;
+    padding: 10px;
+    color: #333;
+    background-color: #fff;
+}
 
 h3 {
     text-align: center;

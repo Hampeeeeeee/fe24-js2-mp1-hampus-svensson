@@ -2,28 +2,28 @@ export class Product {
     #title;
     #imageUrl;
     stock;
-    #price;
+    price;
     #discountPercentage;
     category;
-    #rating;
+    rating;
 
     constructor(title, imageUrl, stock, price, discountPercentage, category, rating) {
         this.#title = title;
         this.#imageUrl = imageUrl;
         this.stock = stock;
-        this.#price = price;
+        this.price = price;
         this.#discountPercentage = discountPercentage;
         this.category = category;
-        this.#rating = rating;
+        this.rating = rating;
     }
 
     displayInfo() {
-        console.log(`Name: ${this.#title} - ${this.#imageUrl} - Amount: ${this.stock} - Price: $${this.#price} - 
-                    Discount: ${this.#discountPercentage}% - Category: ${this.category} - Rating: ${this.#rating}`);
+        console.log(`Name: ${this.#title} - ${this.#imageUrl} - Amount: ${this.stock} - Price: $${this.price} - 
+                    Discount: ${this.#discountPercentage}% - Category: ${this.category} - Rating: ${this.rating}`);
     }
 
     discountedPrice() {
-        return (this.#price * (1 - this.#discountPercentage / 100)).toFixed(2);
+        return (this.price * (1 - this.#discountPercentage / 100)).toFixed(2);
     }
 
     updatePurse() {
