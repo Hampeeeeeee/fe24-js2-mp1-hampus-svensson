@@ -25,7 +25,7 @@ const filterByPrice = (products, priceRange) => {
 
 // funktion som sorterar produkterna beroende på pris, lågt till högt eller högt till lågt.
 const sortByPrice = (products, order = 'lowToHighPrice') => {
-    return products.sort((a, b) => {
+    return [...products].sort((a, b) => {
         if (order === 'lowToHighPrice') {
             return a.discountedPrice() - b.discountedPrice(); 
         } else if (order === 'highToLowPrice') {
@@ -36,7 +36,7 @@ const sortByPrice = (products, order = 'lowToHighPrice') => {
 
 // funktion som sorterar produkterna beroende på omdöme, lågt till högt eller högt till lågt.
 const sortByRating = (products, order = 'lowToHighRating') => {
-    return products.sort((a, b) => {
+    return [...products].sort((a, b) => {
         if (order === 'lowToHighRating') {
             return a.rating - b.rating; 
         } else if (order === 'highToLowRating') {
