@@ -1,6 +1,8 @@
+// funktion som är ett filter på produkternas kategorier.
 const filterByCategory = (products, category) => 
     category === "All" || category === "Select category" ? products : products.filter(product => product.category === category);
 
+// funktion på produkternas priser.
 const filterByPrice = (products, priceRange) => {
     if (priceRange === "Select prize") {
         return products;  
@@ -21,22 +23,24 @@ const filterByPrice = (products, priceRange) => {
     });
 };
 
+// funktion som sorterar produkterna beroende på pris, lågt till högt eller högt till lågt.
 const sortByPrice = (products, order = 'lowToHighPrice') => {
     return products.sort((a, b) => {
         if (order === 'lowToHighPrice') {
-            return a.discountedPrice() - b.discountedPrice(); // Lågt till högt
+            return a.discountedPrice() - b.discountedPrice(); 
         } else if (order === 'highToLowPrice') {
-            return b.discountedPrice() - a.discountedPrice(); // Högt till lågt
+            return b.discountedPrice() - a.discountedPrice(); 
         }
     });
 };
 
+// funktion som sorterar produkterna beroende på omdöme, lågt till högt eller högt till lågt.
 const sortByRating = (products, order = 'lowToHighRating') => {
     return products.sort((a, b) => {
         if (order === 'lowToHighRating') {
-            return a.rating - b.rating; // Lågt till högt
+            return a.rating - b.rating; 
         } else if (order === 'highToLowRating') {
-            return b.rating - a.rating; // Högt till lågt
+            return b.rating - a.rating; 
         }
     });
 };

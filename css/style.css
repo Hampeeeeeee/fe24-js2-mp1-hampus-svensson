@@ -89,7 +89,7 @@ h1 {
     font-family: "Playfair Display", serif;
     font-size: 18px;
     margin-bottom: 5px;
-    color: #333;  /* Färgen på etiketter */
+    color: #333;  
 }
 
 #categoryFilter, #priceFilter {
@@ -97,19 +97,19 @@ h1 {
     font-size: 16px;
     padding: 10px;
     margin-bottom: 20px;
-    width: 100%; /* Gör dropdowns lika breda som formuläret */
+    width: 100%; 
     background-color: #fff;
     border: 2px solid #ddd;
     border-radius: 25px;
     color: #333;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Skugga för att skapa djup */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
 }
 
 #categoryFilter:hover, #priceFilter:hover, #categoryFilter:focus, #priceFilter:focus {
     border-color: #005bb5;
-    outline: none; /* Tar bort blå fokuslinje på fält */
-    box-shadow: 0 0 5px rgba(0, 91, 181, 0.6); /* Lägger till fokus-effekt */
+    outline: none; 
+    box-shadow: 0 0 5px rgba(0, 91, 181, 0.6); 
 }
 
 #categoryFilter option, #priceFilter option {
@@ -133,7 +133,7 @@ h1 {
     font-family: "Playfair Display", serif;
     font-size: 18px;
     margin-bottom: 5px;
-    color: #333;  /* Färgen på etiketter */
+    color: #333;  
 }
 
 #priceHighLowSort, #ratingHighLowSort {
@@ -141,19 +141,19 @@ h1 {
     font-size: 16px;
     padding: 10px;
     margin-bottom: 20px;
-    width: 100%; /* Gör dropdowns lika breda som formuläret */
+    width: 100%; 
     background-color: #fff;
     border: 2px solid #ddd;
     border-radius: 25px;
     color: #333;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Skugga för att skapa djup */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
 }
 
 #priceHighLowSort:hover, #ratingHighLowSort:hover, #priceHighLowSort:focus, #ratingHighLowSort:focus {
     border-color: #005bb5;
-    outline: none; /* Tar bort blå fokuslinje på fält */
-    box-shadow: 0 0 5px rgba(0, 91, 181, 0.6); /* Lägger till fokus-effekt */
+    outline: none; 
+    box-shadow: 0 0 5px rgba(0, 91, 181, 0.6);
 }
 
 #priceHighLowSort option, #ratingHighLowSort option {

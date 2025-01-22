@@ -1,17 +1,20 @@
 import { getProducts } from "./modules/API.js";
 import { filterByCategory, filterByPrice, sortByPrice, sortByRating } from "./modules/Filter.js";
 
+// funktion som hämtar produkterna och kör olika filter på produkterna.
 getProducts().then(products => {
     console.log(products)
     filterDropdown(products);
     displayProducts(products);
 });
 
+// funktion som som väntar på getProducts() för att hämta listan products, och sedan visa listan i DOM'en.
 async function fetchAndLogProducts() {
     const products = await getProducts();
     displayProducts(products);
 }
 
+// funktion som hanterar alla dropdown menyer. 
 function filterDropdown(products) {
     const filterCategoryDropdown = document.getElementById('categoryFilter')
     const filterPriceDowndown = document.getElementById('priceFilter');
@@ -43,7 +46,7 @@ function filterDropdown(products) {
         displayProducts(filteredByPrice);
     });
 
-    sortPriceDropdown.addEventListener('change', () =>{
+    sortPriceDropdown.addEventListener('change', () => {
         const sortedPrice = sortPriceDropdown.value;
 
         console.log('Sorted price:', sortedPrice);
@@ -52,9 +55,9 @@ function filterDropdown(products) {
         console.log('Sorted by price:', sortedByPrice);
 
         displayProducts(sortedByPrice);
-    }); 
+    });
 
-    sortRatingDropdown.addEventListener('change', () =>{
+    sortRatingDropdown.addEventListener('change', () => {
         const sortedRating = sortRatingDropdown.value;
 
         console.log('Sorted rating:', sortedRating);
@@ -63,11 +66,10 @@ function filterDropdown(products) {
         console.log('Sorted by rating:', sortedByRating);
 
         displayProducts(sortedByRating);
-    }); 
-
-
+    });
 }
 
+// funktion som visar upp alla produkter i vars ett productCard.
 function displayProducts(products) {
     const container = document.getElementById('productContainer');
     container.innerHTML = '';
@@ -75,16 +77,10 @@ function displayProducts(products) {
     // Här loopar du igenom alla instanser av Product-klassen
     products.forEach(product => {
         product.displayInfo();
-        
-        const productCard = product.productCard();  
+
+        const productCard = product.productCard();
         container.appendChild(productCard);
     });
 }
 
 fetchAndLogProducts();
-
-
-
-// Två alternativ utifrån det du har här
-// 1. Lämna klassen som den är. Där du loopar igenom alla instanser av klassen, skapar du alla element för product Cards och lägger till eventlistener
-// 2. Lägg till en metod i Product-klassen för att skapa alla element till product card samt lägga till eventlistener. Och anropa den metoden en gång på varje instans, dvs där du loopar igenom dem. 

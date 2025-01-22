@@ -1,5 +1,6 @@
 import { Product } from "./Product.js";
 
+// funktion som hanterar API/URL'n. Skapar en array med alla produkterna och returnerar dessa.
 export async function getProducts() {
 
     const response = await fetch('https://dummyjson.com/products');

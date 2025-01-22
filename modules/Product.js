@@ -1,3 +1,4 @@
+// klass för product med alla variablar som behövs.
 export class Product {
     #title;
     #imageUrl;
@@ -17,15 +18,18 @@ export class Product {
         this.rating = rating;
     }
 
+    // funktion som loggar alla variablar.
     displayInfo() {
         console.log(`Name: ${this.#title} - ${this.#imageUrl} - Amount: ${this.stock} - Price: $${this.price} - 
                     Discount: ${this.#discountPercentage}% - Category: ${this.category} - Rating: ${this.rating}`);
     }
 
+    // funktion som räknar ut det rabatterade priset.
     discountedPrice() {
         return (this.price * (1 - this.#discountPercentage / 100)).toFixed(2);
     }
 
+    // funktion som uppdaterar lagersaldot.
     updatePurse() {
         this.stock -= 1;
 
@@ -34,11 +38,11 @@ export class Product {
         }
     }
 
+    // funktion som skapar ett produktkort och sedan returnerar det.
     productCard() {
         const productCard = document.createElement('div');
         productCard.classList.add('card');
 
-        // Skapa ett namn för produkten
         const title = document.createElement('h3');
         title.innerText = this.#title;
 
@@ -46,11 +50,9 @@ export class Product {
         img.src = this.#imageUrl;
         img.alt = `Image of ${this.#title}`;
         
-        // Skapa ett lagersaldo
         const stock = document.createElement('p');
         stock.innerHTML = `<b>Stock: ${this.stock}</b>`;
         
-        // Skapa ett pris för produkten
         const discountedPrice = document.createElement('p');
         discountedPrice.innerHTML = `<i>Price: $${this.discountedPrice()}</i>`;
         
@@ -62,7 +64,6 @@ export class Product {
         });
         productCard.append(title, img, stock, discountedPrice, addToCartBtn);
     
-        // Returnera kortet så det kan läggas till i DOM senare
         return productCard;
     }
 }
